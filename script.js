@@ -147,8 +147,8 @@ let boardDiv = document.querySelector(".board");
 let resetButton = document.querySelector(".reset");
 let stepCount = document.querySelector(".stepCount");
 let placingKnight = true;
-let knightPosition;
-let targetPosition;
+let knightPosition = null;
+let targetPosition = null;
 
 //set up the board.
 const setup = () => {
@@ -184,13 +184,14 @@ const tryPlace = (e) => {
   }
   if (!placingKnight) {
     targetPosition = e.target.getAttribute("data-id");
+    if (targetPosition == knightPosition) return;
     placeTarget(e.target);
     placingKnight = "done";
     startTravail(knightPosition, targetPosition);
     boardDiv.classList.remove("active");
     return;
+    }
   }
-};
 
 // fill the 'board' div with 'squares'.
 const generateSquares = () => {
