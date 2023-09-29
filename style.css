@@ -1,0 +1,148 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+h1::before {
+    content: url('./knight.svg');
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: black 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.board {
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid black;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.square {
+    background-color: rgba(119, 136, 153, 0.296);
+    border: 1px solid rgb(106, 106, 106);
+
+    padding: min(4.2vw, 4.2vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.active>div:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: rgba(98, 112, 125, 0.296);;
+}
+
+
+.knight {
+    /* height: 20px;
+    width: 20px; */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 2px; */
+}
+
+.knight::after {
+    content: url('./knight.svg');
+}
+
+.target {
+    /* padding: 2px; */
+    /* height: 20px;
+    width: 20px; */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.target::after {
+    content: url('./target.svg');
+    transform: scale(2);
+}
+
+.step {
+    background-color: rgb(87, 132, 191);
+}
+
+
+.stepMarker {
+    z-index: 999;
+    position: absolute;
+    color: white;
+    animation: fadein 0.6s;
+    opacity: 1;
+    transform: translateY(3vh);
+    font-weight: bold;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(3vh);
+    }
+}
+
+.reset {
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 6px 10px 6px 10px;
+    border: black 1px solid;
+    color: black;
+    background-color: white;
+    transition: background, border 0.5s;
+}
+.reset:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.stepCount {
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+.container * {
+    margin: 0 0 0 1rem;
+}
