@@ -4,7 +4,7 @@ A variation on the classic "Knight's Tour" chess problem. Given any start and en
 
 ## Implementation:
 
-The shortest path is found by doing a breadth-first-search on a 'Knight's graph' - which represents all legal moves a knight can make on a chessboard.
+The shortest path is found by doing a breadth-first-search on a 'Knight's graph'.
 
 Though setup here like an 8x8 chessboard, the Graph class can be arbitrarily extended to represent a board of any n x n size.
 
